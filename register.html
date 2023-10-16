@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Tu código HTML actual -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regístrate</title>
+    <link rel="stylesheet" href="./css/registros.css">
+    <script>
+        function validarClave() {
+            var clave = document.getElementById("clave").value;
+            var contieneCaracterEspecial = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\]/.test(clave);
+            var contieneNumero = /\d/.test(clave);
+
+            if (!contieneCaracterEspecial || !contieneNumero || clave.length < 8) {
+                alert("La contraseña debe tener al menos 8 caracteres, un carácter especial y un número.");
+                return false; // Evita el envío del formulario
+            }
+            return true; // Permite el envío del formulario si la contraseña cumple con los requisitos
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Regístrate como nuevo</div>
+        <div class="content">
+            <form onsubmit="return validarClave();" method="post" action="registro.php">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Nombres</span>    
+                        <input type="text" name="Nombres" placeholder="Ingrese sus nombres" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Apellidos</span>    
+                        <input type="text" name="Apellidos" placeholder="Ingrese sus apellidos" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Correo</span>    
+                        <input type="email" name="Correo" placeholder="Ingrese su correo" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Clave</span>    
+                        <input type="password" name="Clave" id="clave" placeholder="Ingrese su contraseña" required>
+                    </div>
+                </div>    
+                <div class="button">
+                    <input type="submit" value="Registrarse">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

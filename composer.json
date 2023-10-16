@@ -1,0 +1,6 @@
+{
+    "require": {
+        "google/apiclient": "2.0",
+        "adnanhussainturki/microsoft-api-php": "^0.03.0"
+    }
+}
