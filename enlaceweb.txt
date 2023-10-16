@@ -1,1 +1,1 @@
-https://tr2mejora.azurewebsites.net/
+https://tr2mejora.azurewebsites.net/login.php
